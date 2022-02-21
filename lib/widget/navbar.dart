@@ -1,5 +1,6 @@
 import 'package:bookstore/constants/Theme.dart';
 import 'package:bookstore/widget/input.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 // import 'package:material_kit_flutter/screens/categories.dart';
@@ -150,7 +151,7 @@ class _NavbarState extends State<Navbar> {
                     padding: const EdgeInsets.only(
                         top: 8, bottom: 4, left: 15, right: 15),
                     child: Input(
-                        placeholder: "What are you looking for?",
+                        placeholder: "What are you looking for?".tr(),
                         controller: myController,
                         onChanged: widget.searchOnChanged,
                         autofocus: widget.searchAutofocus,

@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:bookstore/constants/Theme.dart';
 import 'package:bookstore/data/model/book.dart';
 import 'package:bookstore/widget/navbar.dart';
+import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
 class BookDetail extends StatelessWidget {
@@ -11,7 +12,7 @@ class BookDetail extends StatelessWidget {
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: Navbar(
-          title: 'Book detail',
+          title: 'Book detail'.tr(),
           transparent: false,
           backButton: true,
         ),

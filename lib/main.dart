@@ -43,12 +43,11 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: const MyHomePage(title: 'API Demo Page'),
+      home: const MyHomePage(),
       initialRoute: "/home",
       routes: <String, WidgetBuilder>{
         "/book": (BuildContext context) => BookDetail(),
-        "/home": (BuildContext context) =>
-            const MyHomePage(title: 'API Demo Page'),
+        "/home": (BuildContext context) => const MyHomePage(),
       },
     );
   }
