@@ -5,7 +5,6 @@ import 'package:bookstore/data/model/book.dart';
 import 'package:bookstore/data/model/books_data.dart';
 import 'package:bookstore/service/book_service.dart';
 import 'package:bookstore/widget/book_item.dart';
-import 'package:bookstore/widget/card-horizontal.dart';
 import 'package:bookstore/widget/navbar.dart';
 import 'package:dio/dio.dart';
 import 'package:easy_localization/src/public_ext.dart';

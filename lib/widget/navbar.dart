@@ -3,23 +3,14 @@ import 'package:bookstore/widget/input.dart';
 import 'package:easy_localization/src/public_ext.dart';
 import 'package:flutter/material.dart';
 
-// import 'package:material_kit_flutter/screens/categories.dart';
-// import 'package:material_kit_flutter/screens/best-deals.dart';
-// import 'package:material_kit_flutter/screens/search.dart';
-// import 'package:material_kit_flutter/screens/cart.dart';
-// import 'package:material_kit_flutter/screens/chat.dart';
-
 class Navbar extends StatefulWidget implements PreferredSizeWidget {
   final String title;
-  final String categoryOne;
-  final String categoryTwo;
   final bool searchBar;
   final bool backButton;
   final bool transparent;
   final bool rightOptions;
   final Function? getCurrentPage;
   final bool isOnSearch;
-  // final TextEditingController searchController;
   final void Function(String)? searchOnChanged;
   final bool searchAutofocus;
   final bool noShadow;
@@ -27,12 +18,9 @@ class Navbar extends StatefulWidget implements PreferredSizeWidget {
 
   Navbar(
       {this.title = "Home",
-      this.categoryOne = "",
-      this.categoryTwo = "",
       this.transparent = false,
       this.rightOptions = true,
       this.getCurrentPage,
-      // this.searchController = myController,
       this.isOnSearch = false,
       this.searchOnChanged,
       this.searchAutofocus = false,
@@ -59,13 +47,8 @@ class _NavbarState extends State<Navbar> {
 
   @override
   Widget build(BuildContext context) {
-    final bool categories =
-        widget.categoryOne.isNotEmpty && widget.categoryTwo.isNotEmpty;
-
     return Container(
-        height: widget.searchBar
-            ? (!categories ? (178.0) : (210.0))
-            : (!categories ? (102.0) : (150.0)),
+        height: widget.searchBar ? (178.0) : (102.0),
         decoration: BoxDecoration(
             color: !widget.transparent ? widget.bgColor : Colors.transparent,
             boxShadow: [
@@ -171,56 +154,6 @@ class _NavbarState extends State<Navbar> {
                 SizedBox(
                   height: widget.searchBar ? 10 : 0,
                 ),
-                if (categories)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => Categories()));
-                        },
-                        child: Row(
-                          children: [
-                            Icon(Icons.border_all,
-                                color: Colors.black87, size: 22.0),
-                            SizedBox(width: 10),
-                            Text(widget.categoryOne,
-                                style: TextStyle(
-                                    color: Colors.black87, fontSize: 16.0)),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 30),
-                      Container(
-                        color: MaterialColors.muted,
-                        height: 25,
-                        width: 0.3,
-                      ),
-                      SizedBox(width: 30),
-                      GestureDetector(
-                        onTap: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => BestDeals()));
-                        },
-                        child: Row(
-                          children: [
-                            Icon(Icons.camera_enhance,
-                                color: Colors.black87, size: 22.0),
-                            SizedBox(width: 10),
-                            Text(widget.categoryTwo,
-                                style: TextStyle(
-                                    color: Colors.black87, fontSize: 16.0)),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
               ],
             ),
           ),
